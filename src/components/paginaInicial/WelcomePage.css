@@ -1,0 +1,14 @@
+#welcome {
+  max-width: 600px;
+}
+
+#welcome p {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #09411e ;
+}
+
+#welcome img {
+  margin-top: 2.5rem;
+}
