@@ -5,13 +5,17 @@ const stages = ["start", "playing", "end"];
 
 const initialState = {
   gameState: stages[0],
-  questions
+  questions,
 }
 
 const quizReducer = (state, action) => {
   switch(action.type) {
     case "change_state":
-      return state;
+      // console.log('foi');
+      return {
+        ...state,
+        gameState: stages[1],
+      };
     
       default:
         return state;
