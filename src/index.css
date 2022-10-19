@@ -5,10 +5,14 @@
   color: #443d35;
 }
 
+li, ul {
+  list-style: none;
+}
+
 body {
   min-height: 100vh;
   height: 100%;
-  background-color: #f0e5d8;
+  background-color: #f1e1cc;
   display: block;
   max-width: 1400px;
   margin: 50px auto;
@@ -26,15 +30,16 @@ button {
   border: none;
   padding: 20px 50px;
   cursor: pointer;
-  background: linear-gradient(90deg,
-  rgba(187, 223, 200, 1) 0%,
-  rgba(117, 207, 187, 1) 100%);
+  background: linear-gradient(
+  rgb(146, 211, 171) 20%,
+  rgb(75, 180, 157) 100%);
   color: #fff;
+  margin-top: 20px;
 }
 
 button:hover {
-  background: linear-gradient(90deg,
-  rgba(117, 207, 187, 1) 0%,
-  rgba(187, 223, 200, 1)  100%);
+  background: linear-gradient(
+  rgb(75, 180, 157) 20%,
+  rgb(146, 211, 171) 100%);
   transition: 1s;
 }

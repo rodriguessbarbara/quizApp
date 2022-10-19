@@ -1,0 +1,14 @@
+#options li {
+  margin: 15px 0;
+  background-color: #fc9d22;
+  padding: 1.5rem;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+#options li:hover {
+  background-color: rgb(75, 180, 157);
+  transition: .3s;
+}

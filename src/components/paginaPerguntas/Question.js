@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { QuizContext } from '../../context/quiz';
+import QuestionOptions from './QuestionOptions';
 import data from '../../data/questions';
 
 import './Question.css';
@@ -15,10 +16,11 @@ const Question = () => {
 
       <div id='options-container'>
         <p>Opções</p>
+        <QuestionOptions/>
       </div>
+
       <button disabled={quizState.currentQuestion === 0} onClick={() => dispatch({type: "back_question"})}>Voltar</button>
       <button onClick={() => dispatch({type: "change_question"})}>Próxima</button>
-
     </div>
   )
 }
