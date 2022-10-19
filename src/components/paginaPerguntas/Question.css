@@ -1,0 +1,29 @@
+#question {
+  max-width: 600px;
+  background-color: #ffc478;
+  border-radius: 25px;
+  padding: 30px 60px;
+}
+
+#question p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+#question h3 {
+  font-size: 1.75rem;
+  margin: 15px 0 25px 0;
+  line-height: 2rem;
+}
+
+#question button {
+  border: 3px solid #f0e5d8;
+  padding: 15px 40px;
+  margin-left: 20px;
+}
+
+#question button:disabled {
+  background: #968a79;
+  cursor: default;
+}
