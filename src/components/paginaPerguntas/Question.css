@@ -1,20 +1,14 @@
 #question {
-  max-width: 600px;
+  max-width: 400px;
   background-color: #ffc478;
   border-radius: 25px;
-  padding: 30px 60px;
+  padding: 25px 50px;
 }
 
 #question p {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 400;
-}
-
-#question h3 {
-  font-size: 1.75rem;
-  margin: 15px 0 25px 0;
-  line-height: 2rem;
 }
 
 #question button {

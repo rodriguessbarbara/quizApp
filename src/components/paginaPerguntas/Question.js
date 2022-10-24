@@ -9,6 +9,11 @@ const Question = () => {
   const [quizState, dispatch] = useContext(QuizContext);
   const questaoAtual = quizState.questions[quizState.currentQuestion];
 
+  const handleClick = () => {
+      if (quizState.currentQuestion + 1 === data.length) dispatch({type: "end_stage"})
+      else dispatch({type: "change_question"})
+    }
+
   return (
     <div id='question'>
       <p>Pergunta {quizState.currentQuestion + 1} de {data.length}</p>
@@ -20,7 +25,9 @@ const Question = () => {
       </div>
 
       <button disabled={quizState.currentQuestion === 0} onClick={() => dispatch({type: "back_question"})}>Voltar</button>
-      <button onClick={() => dispatch({type: "change_question"})}>Próxima</button>
+      <button onClick={handleClick}>
+        Próxima
+      </button>
     </div>
   )
 }
