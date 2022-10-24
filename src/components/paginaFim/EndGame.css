@@ -1,0 +1,17 @@
+#endgame {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+#endgame p {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #09411e ;
+}
+
+#endgame img {
+  margin-top: 1rem;
+  height: 350px;
+}
