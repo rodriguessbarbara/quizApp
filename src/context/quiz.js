@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import EndGame from "../components/paginaFim/EndGame";
+// import EndGame from "../components/paginaFim/EndGame";
 import questions from '../data/questions'
 
 const stages = ["start", "playing", "end"];
@@ -9,6 +9,7 @@ const initialState = {
   questions,
   currentQuestion: 0,
   score: 0,
+  answerSelected: false,
 }
 
 const quizReducer = (state, action) => {
@@ -57,6 +58,21 @@ const quizReducer = (state, action) => {
     case "new_game":
       return initialState;
 
+    case "check_answer":
+      console.log(action);
+      const answer = action.payload.answer
+      const option = action.payload.option
+      let correctAnswer = 0
+
+      if (answer === option) correctAnswer = 1;
+
+      return {
+        ...state,
+        score: state.score + correctAnswer,
+        answerSelected: option,
+      }
+     
+      
       default:
         return state;
   }

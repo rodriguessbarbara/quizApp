@@ -3,18 +3,13 @@ import { QuizContext } from '../../context/quiz';
 
 import './QuestionOptions.css';
 
-const QuestionOptions = () => {
+const QuestionOptions = ( {option, selectedOption, answer } ) => {
   const [quizState, dispatch] = useContext(QuizContext);
-  const questaoAtual = quizState.questions[quizState.currentQuestion];
 
   return (
-    <div id='options'>
-    <ul>
-      {questaoAtual.options.map((option) => (
-        <li>
-          {option}
-        </li>
-        ))}
+    <div className="option" id='options'>
+    <ul onClick={() => selectedOption()}>
+      <li>{option}</li>
     </ul>
     </div>
   )
