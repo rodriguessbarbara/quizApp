@@ -21,10 +21,11 @@ const quizReducer = (state, action) => {
       };
     
     case "reorder_questions":
-      console.log('foi pora');
+      console.log('foi o reorder');
       const reorderedQuestions = state.questions.sort(() => {
         return Math.random() - .5;
       });
+
       return {
         ...state,
         questions: reorderedQuestions,
@@ -56,9 +57,11 @@ const quizReducer = (state, action) => {
       };
     
     case "new_game":
-      return initialState;
+      return initialState
 
     case "check_answer":
+      // if (state.answerSelected) return state;
+
       console.log(action);
       const answer = action.payload.answer
       const option = action.payload.option

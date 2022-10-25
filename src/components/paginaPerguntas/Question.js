@@ -9,15 +9,6 @@ const Question = () => {
   const [quizState, dispatch] = useContext(QuizContext);
   const questaoAtual = quizState.questions[quizState.currentQuestion];
 
-  const OnSelectedOption = (option) => {
-    console.log(option)
-    quizState.answerSelected = true;
-    dispatch({
-      type:"check_answer",
-      payload: {answer: questaoAtual.answer, option}
-    })
-  }
-
   const handleClick = () => {
       if (quizState.currentQuestion + 1 === data.length) dispatch({type: "end_stage"})
       else dispatch({type: "change_question"})
@@ -30,15 +21,7 @@ const Question = () => {
 
       <div id='options-container'>
         <p>Opções</p>
-
-        {questaoAtual.options.map((option) => (
-            <QuestionOptions
-              option={option}
-              key={option}
-              answer={questaoAtual.answer}
-              selectedOption={() => OnSelectedOption(option)}
-            />
-        ))}
+        <QuestionOptions/>
       </div>
 
       <button disabled={quizState.currentQuestion === 0} onClick={() => dispatch({type: "back_question"})}>Voltar</button>

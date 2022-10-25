@@ -12,3 +12,9 @@
   background-color: rgb(75, 180, 157);
   transition: .3s;
 }
+
+#options li:active, #options li:focus {
+  background-color: rgb(75, 180, 157);
+
+  border: 2px solid rgb(75, 180, 157);
+}
