@@ -4,12 +4,17 @@ import { QuizContext } from '../../context/quiz';
 import './QuestionOptions.css';
 
 const QuestionOptions = ( {option, selectedOption, answer } ) => {
-  const [quizState, dispatch] = useContext(QuizContext);
+    const [quizState, dispatch] = useContext(QuizContext);
   const questaoAtual = quizState.questions[quizState.currentQuestion];
   answer= questaoAtual.answer
 
   const OnSelectedOption = (option) => {
-    // quizState.answerSelected = true;
+    // const lis = document.querySelectorAll('li');
+    //   lis.forEach((li) => {
+    //     // li.style.pointerEvents = 'none';
+    //     li.style.opacity = '0.75';
+    //   })
+
     dispatch({
       type:"check_answer",
       payload: {answer: questaoAtual.answer, option}
@@ -17,18 +22,15 @@ const QuestionOptions = ( {option, selectedOption, answer } ) => {
   }
 
   return (
-    <div id='options' className='options'>
+    <ul id='options'>
 
-    <ul>
       {questaoAtual.options.map((option) => (
         <li key={option} onClick={() => OnSelectedOption(option)}>
           {option}
         </li>
         ))}
     </ul>
-
-    </div>
   )
 }
 
-export default QuestionOptions
+export default QuestionOptions;

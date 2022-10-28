@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, startTransition, useReducer } from "react";
 // import EndGame from "../components/paginaFim/EndGame";
 import questions from '../data/questions'
 
@@ -41,6 +41,7 @@ const quizReducer = (state, action) => {
         ...state,
         currentQuestion: nextQuestion,
         gameStage: endGame === true ? stages[2] : state.gameStage,
+        answerSelected : false,
       };
 
     case "back_question":
@@ -57,25 +58,27 @@ const quizReducer = (state, action) => {
       };
     
     case "new_game":
-      return initialState
+      return initialState;
 
     case "check_answer":
-      // if (state.answerSelected) return state;
+      if (state.answerSelected) return state;
 
       console.log(action);
       const answer = action.payload.answer
       const option = action.payload.option
       let correctAnswer = 0
-
-      if (answer === option) correctAnswer = 1;
+      
+      if (answer === option) {
+        console.log('pontuou');
+        correctAnswer = 1;
+      }
 
       return {
         ...state,
         score: state.score + correctAnswer,
         answerSelected: option,
       }
-     
-      
+           
       default:
         return state;
   }
