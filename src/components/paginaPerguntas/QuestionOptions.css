@@ -12,3 +12,14 @@
   background-color: rgb(75, 180, 157);
   transition: .3s;
 }
+
+#options .correct {
+  background-color: #2bac26;
+  font-weight: bold;
+  opacity: .7;
+}
+
+#options .wrong {
+  background-color: #ce0d17;
+  opacity: .25;
+}

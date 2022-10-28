@@ -25,7 +25,11 @@ const QuestionOptions = ( {option, selectedOption, answer } ) => {
     <ul id='options'>
 
       {questaoAtual.options.map((option) => (
-        <li key={option} onClick={() => OnSelectedOption(option)}>
+        <li key={option} onClick={() => OnSelectedOption(option)} className={`option
+          ${quizState.answerSelected && option === answer ? 'correct' : ''}
+          ${quizState.answerSelected && option !== answer ? 'wrong' : ''}
+          `}
+        >
           {option}
         </li>
         ))}
